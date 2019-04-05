@@ -1,0 +1,62 @@
+
+
+-- Adminer 4.6.3 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+SET NAMES utf8mb4;
+
+DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1,	'2014_10_12_000000_create_users_table',	1),
+(2,	'2014_10_12_100000_create_password_resets_table',	1);
+
+DROP TABLE IF EXISTS `password_resets`;
+CREATE TABLE `password_resets` (
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  KEY `password_resets_email_index` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_enabled` tinyint(1) NOT NULL DEFAULT '0',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `password`, `is_enabled`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1,	'Justice',	'damore.gust',	'jacobs.diamond@example.org',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'ByGFQFAqe3',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(2,	'Brain',	'cesar.davis',	'preston14@example.com',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'AwZp7D4jPxJLfMOhlrgvoWp38jSID8J4EdR0Bo1LuF0NDpo9dA7VkGnVgM40',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(3,	'Deontae',	'nya.hansen',	'natasha20@example.org',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'mMpNLhTL3H',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(4,	'Elvie',	'bergnaum.maxine',	'rutherford.sophie@example.org',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'gOd7ngGN5S',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(5,	'Kiel',	'sim.treutel',	'jaeden.yundt@example.net',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'DT4JLqo7J1',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(6,	'Samantha',	'qtillman',	'margot.tremblay@example.com',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'YTl3hLlBYS',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(7,	'Jaleel',	'chauncey67',	'treutel.susie@example.net',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'Qe65LCVO8o',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(8,	'Wyman',	'jules27',	'hvandervort@example.net',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'FHZvk2u3NV',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(9,	'Keith',	'bayer.velda',	'jacey45@example.com',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'BOCW91BljU',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31'),
+(10,	'Dejah',	'sadye.donnelly',	'schaefer.neoma@example.org',	NULL,	'$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',	1,	'6H7A9LIlMy',	'2018-12-14 04:56:31',	'2018-12-14 04:56:31');
+
+-- 2018-12-14 20:11:55
+
